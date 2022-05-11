@@ -28,6 +28,9 @@
         <s:url var="updateButton" value="/editEmployee">
             <s:param name="employeeId" value="${employee.id}"/>
         </s:url>
+        <s:url var="deleteButton" value="/deleteEmployee">
+            <s:param name="employeeId" value="${employee.id}"/>
+        </s:url>
         <tr>
             <td>${employee.name}</td>
             <td>${employee.surname}</td>
@@ -35,6 +38,7 @@
             <td>${employee.salary}</td>
             <td>
                 <input type="button" value="update" onclick="window.location.href = '${updateButton}'">
+                <input type="button" value="delete" onclick="window.location.href = '${deleteButton}'">
             </td>
         </tr>
     </s:forEach>
@@ -43,7 +47,5 @@
 
 <input type="button" value="add"
        onclick="window.location.href = '/addNewEmployee'">
-
-
 </body>
 </html>
