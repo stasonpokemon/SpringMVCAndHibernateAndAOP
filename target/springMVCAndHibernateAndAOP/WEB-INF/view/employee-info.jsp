@@ -12,9 +12,12 @@
     <title>Employee info</title>
 </head>
 <body>
-<h2>Employee info</h2>
+<h2>Employee Info</h2>
 <br>
 <form:form action="/saveEmployee" modelAttribute="employee">
+    <form:hidden path="id"/>
+
+
     Name <form:input path="name"/>
     <form:errors path="name"/>
     <br><br>
@@ -27,7 +30,7 @@
     Salary <form:input path="salary"/>
     <form:errors path="salary"/>
     <br><br>
-    <input type="submit" value="OK">
+    <input type="submit" value="Save">
 </form:form>
 
 
