@@ -1,6 +1,10 @@
 package com.trebnikau.entity;
 
+
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "employees")
@@ -9,12 +13,17 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name = "name")
+    @NotBlank(message = "name must not be empty")
     private String name;
     @Column(name = "surname")
+    @NotBlank(message = "surname must not be empty")
     private String surname;
     @Column(name = "department")
+    @NotBlank(message = "department must not be empty")
     private String department;
     @Column(name = "salary")
+    @Min(value = 500, message = "salary must be more than 499")
+    @Max(value = 25000, message = "salary must be less than 25001")
     private int salary;
 
     public Employee() {
